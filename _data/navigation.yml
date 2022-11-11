@@ -1,4 +1,6 @@
-# header:
+header:
+  sidebar:
+    nav: docs-en
 #   - titles:
 #       # @start locale config
 #       en      : &EN       Archive
