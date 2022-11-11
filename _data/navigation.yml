@@ -1,10 +1,10 @@
 header:
-  sidebar:
-    nav: docs-en
   - title: 归档      
     url: /archive.html
-  - titles: 关于
+  - title: 关于
     url: /about.html
+  sidebar:
+    nav: docs-en
 
 
 docs-en:
