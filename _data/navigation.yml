@@ -1,16 +1,6 @@
 header:
   - title: 归档      
     url: /archive.html
-  - title: 编程
-    children:
-      - title:  后端
-        children: 
-          - title: java
-            children:
-              - title: javase基础知识
-                children: 
-                  - title: java初级知识点
-                  url: _posts/编程/后端/JAVA/javase基础知识/java初级知识点.html
   - title: 关于
     url: /about.html
   - title: github
