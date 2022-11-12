@@ -1,6 +1,16 @@
 header:
   - title: 归档      
     url: /archive.html
+  sidebar:
+    nav: docs-zh
+  - title: 关于
+    url: /about.html
+  - title: github
+    url: https://github.com/ityss1024/ityss1024.github.io
+  
+
+
+docs-zh:
   - title:  大学学科
     children:
       - title:  数据结构和算法
@@ -13,27 +23,12 @@ header:
             children:
               - title: mysql数据库基本操作
               url: _post/2022-11-12-mysql数据库基本操作.md
-  - title: 关于
-    url: /about.html
-  - title: github
-    url: https://github.com/ityss1024/ityss1024.github.io
-  
-
-
-docs-en:
-  - title:      编程
-    children:
-      - title:  前端
-        url:    /docs/en/quick-start
-      - title:  后端
-        url:    /docs/en/structure
-
-  - title:      大学学科
-    children:
-      - title:  数据结构和算法
-        url:    /docs/en/configuration
-      - title:  数据库
-        url:    /docs/en/navigation
+  - title: 编程
+  children:
+    - title:  前端
+      url:    /docs/en/quick-start
+    - title:  后端
+      url:    /docs/en/structure
 
 # sidebar:
-#   nav: docs-en
+#   nav: docs-zh
