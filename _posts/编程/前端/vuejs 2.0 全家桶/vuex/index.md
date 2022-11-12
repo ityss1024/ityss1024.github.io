@@ -1,0 +1,77 @@
+<h1 align="center">vuex 状态管理</h1>
+
+参考 https://www.jianshu.com/p/a804606ad8e9
+
+官网 https://vuex.vuejs.org/zh/guide/state.html
+
+**1.定义**
+
+```javascript
+vuex 是一个专门为vue.js应用程序开发的状态管理模式。
+
+这个状态我们可以理解为在data中的属性，需要共享给其他组件使用的部分。
+
+也就是说，是我们需要共享的data，使用vuex进行统一集中式的管理。
+```
+
+
+
+**2.为什么要用vuex(vuex有什么作用)**
+
+```javascript
+负责  组件 --- 组件 之间的通讯(数据交互) 不限于父子组件之间
+小项目不建议使用vuex
+```
+
+
+
+**3.vuex默认五种基本对象**
+
+![img](20190425151428535.png)
+
+
+
+```javascript
+Vuex 和单纯的全局对象有以下两点不同：
+// 1.Vuex 的状态存储是响应式的。当 Vue 组件从 store 中读取状态的时候，若 store 中的状态发生变化，那么相应的组件也会相应地得到高效更新。
+// 2.不能直接改变 store 中的状态。改变 store 中的状态的唯一途径就是显式地提交 (commit) mutation。这样使得我们可以方便地跟踪每一个状态的变化，从而让我们能够实现一些工具帮助我们更好地了解我们的应用。
+
+```
+
+```javascript
+// Store
+每一个 Vuex 应用的核心就是 store（仓库）。“store” 基本上就是一个容器，它包含着你的应用中大部分的状态 (state)。
+// State
+驱动应用的数据源，用于保存所有组件的公共数据.
+// Getters
+可以理解为所有组件的computed属性即计算属性.
+getters的返回值会根据它的依赖被缓存起来，且只有当它的依赖值发生了改变才会被重新计算。
+// Mutations
+可以理解为store中的methods.
+mutations对象中保存着更改数据的回调函数,该函数名官方规定叫type, 第一个参数是state, 第二参数是payload, 也就是自定义的参数.
+//注意:调用mutaions中回调函数, 只能使用store.commit(type, payload)
+
+// Actions
+actions 类似于 mutations，不同在于：
+1.actions提交的是mutations而不是直接变更状态
+2.actions中可以包含异步操作, mutations中绝对不允许出现异步
+3.actions中的回调函数的第一个参数是context, 是一个与store实例具有相同属性和方法的对象
+
+// Modules
+由于使用单一状态树，应用的所有状态会集中到一个比较大的对象。当应用变得非常复杂时，store 对象就有可能变得相当臃肿。为了解决以上问题，Vuex 允许我们将 store 分割成模块（module）。每个模块拥有自己的 state、mutation、action、getter、甚至是嵌套子模块——从上至下进行同样方式的分割.
+```
+
+问题1 全局对象和state 中的对象有什么区别?
+
+1.state 中的对象是响应式的.
+
+2.改变state对象的唯一途径是 提交commit().
+
+问题2 actions 和 Mutations 有什么区别?
+
+1.actions 是允许异步的 Mutations 只能同步.
+
+2.actions 提交的是Mutations.
+
+**扩展**
+

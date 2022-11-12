@@ -1,0 +1,164 @@
+### restful api
+
+```js
+get /user
+post /user
+put /user
+delete /user
+```
+
+
+
+### 加载html和静态资源文件
+
+```
+r := gin.Default()
+// 加载html文件
+r.LoadHTMLGlob("templates/*")
+// 加载资源文件
+r.Static("/static","./static")
+```
+
+
+
+### html文件
+
+```go
+r.GET("/test", func(c *gin.Context) {
+		// // 返回json数据
+		// c.JSON(200, gin.H{
+		// 	"msg": "GET",
+		// })
+		c.HTML(http.StatusOK,"test.html",gin.H{
+			"msg":"这是后台传来的数据",
+		})
+	})
+
+在html文件中使用 {{.msg}}  接收
+```
+
+
+
+### 接收前端传递过来的参数 ?拼接传参
+
+```go
+r.GET("/user/info", func(c *gin.Context) {
+		// 获取页面请求的参数
+		userid := c.Query("userid")
+		username := c.Query("username")
+		c.JSON(http.StatusOK,gin.H{
+			"userid":userid,
+			"username":username,
+		})
+	})
+```
+
+
+
+### 接收前端传递过来的参数
+
+```go
+r.GET("/user/info/:userid/:username", func(c *gin.Context) {
+		// 获取页面请求的参数
+		userid := c.Param("userid")
+		username := c.Param("username")
+		c.JSON(http.StatusOK,gin.H{
+			"userid":userid,
+			"username":username,
+		})
+	})
+```
+
+
+
+### 前端给后端传递json
+
+```go
+r.POST("/json", func(c *gin.Context) {
+		// 获取json数据  requset.body
+		body,_ := c.GetRawData()
+
+		var m map[string]interface{}
+		// 包装为json数据
+		_ = json.Unmarshal(body,&m)
+
+		c.JSON(http.StatusOK,m)
+	})
+```
+
+
+
+### 前端给后端传递表单
+
+```go
+r.POST("/user/add", func(c *gin.Context) {
+		// 获取表单数据
+		username := c.PostForm("username")
+		pwd := c.PostForm("pwd")
+
+		c.JSON(http.StatusOK,gin.H{
+			"pwd":pwd,
+			"username":username,
+		})
+	})
+```
+
+
+
+### 路由重定向
+
+```go
+// 路由  
+	r.GET("/gobd", func(c *gin.Context) {
+		// 重定向到百度  重定向代码为 301
+		c.Redirect(http.StatusMovedPermanently,"https://www.baidu.com")
+	})
+```
+
+
+
+### 404
+
+```go
+// 404
+	r.NoRoute(func(c *gin.Context) {
+		c.HTML(http.StatusNotFound,"404.html",nil)
+	})
+```
+
+
+
+### 路由组
+
+```go
+// 路由组定义   /group1/one
+userGroup := r.Group("/group1")
+{
+userGroup.GET("/one",func(c *gin.Context){
+
+})
+}
+```
+
+### 自定义中间件 (java中对应拦截器)
+
+```go
+// 自定义中间件  拦截器   登录验证
+func myHandler() (gin.HandlerFunc){
+	return func(c *gin.Context){
+		// 通过自定义的中间件  设置的值  在后续处理只要调用了这个中间件的都可以拿到这个参数
+		c.Set("usersession","userid-1")
+		c.Next() // 放行
+		c.Abort()// 阻断
+	}
+}
+
+使用
+// 自定义拦截器实现
+	r.GET("/myHandler",myHandler(), func(c *gin.Context) {
+		// 取出中间件的usersession
+		usersession := c.MustGet("usersession").(string)
+		log.Printf(usersession)
+	})
+```
+

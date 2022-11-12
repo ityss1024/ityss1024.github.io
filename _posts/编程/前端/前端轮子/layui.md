@@ -1,0 +1,18 @@
+### layedit的bug修改
+
+```
+解决 layedit is not defined
+将layedit改为this
+```
+
+![image-20220307183004534](image-20220307183004534.png)
+
+
+
+### 提交表单
+
+```
+序列化数值   
+$("#dataform").serialize()  相当于 data.field
+```
+

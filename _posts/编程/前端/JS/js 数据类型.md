@@ -1,0 +1,25 @@
+
+
+== 等于  === 等值等类型
+
+### JS有几种数据类型,其中基本数据类型有哪些?
+
+```
+参考答案
+```
+
+**七种数据类型**
+
+- Boolean
+- Null
+- Undefined
+- Number
+- String
+- Symbol (ECMAScript 6 新定义)
+- Object
+
+(ES6之前)其中5种为基本类型:`string`,`number`,`boolean`,`null`,`undefined`,
+
+ES6出来的`Symbol`也是原始数据类型 ，表示独一无二的值
+
+`Object`为引用类型(范围挺大),也包括数组、函数,

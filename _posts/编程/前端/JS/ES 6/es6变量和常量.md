@@ -1,0 +1,26 @@
+参考 https://www.runoob.com/w3cnote/es6-let-const.html
+
+var 是全局声明  let是局部声明   const 是常量声明
+
+```javascript
+// 全局声明和局部声明 
+// var 是全局申明
+var a = 1 ;
+console.log(a);
+
+{
+	var a = "技术胖"
+}
+
+console.log(a);  // 打印  技术胖
+let i = 1;
+
+for(let i = 0;i<10;i++){
+	console.log("循环体中："+i)
+}
+console.log("循环体外："+i)  // 报错
+
+const a = "js";
+var a = "jsddd";  // 报错
+```
+

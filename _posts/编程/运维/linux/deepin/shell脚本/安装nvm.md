@@ -1,0 +1,22 @@
+
+
+参考 https://blog.csdn.net/qq_41238308/article/details/106054751
+
+```shell
+#! /bin/bash
+sudo apt update && apt upgrade -y;
+sudo apt install git -y;
+sudo apt install wget -y;
+sudo mkdir -p /usr/local/nvm;
+sudo git clone https://github.com/nvm-sh/nvm.git /usr/local/nvm;
+cd /usr/local/nvm;
+./install.sh;
+export NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/dist;
+source ~/.bashrc;
+nvm install stable;
+node -v;
+npm -v;
+```
+
+
+

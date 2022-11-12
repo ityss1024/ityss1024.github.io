@@ -1,0 +1,12 @@
+
+
+```shell
+1、Animate https://animate.style/ 有趣的，跨浏览器css3动画库
+2、Hover.css http://ianlunn.github.io/Hover/  CSS动画集合库 # 打不开
+3、WickedCSS http://kristofferandreasen.github.io/wickedCSS/#  炫酷C SS3动画库 # 打不开
+4、Angrytools https://angrytools.com/css/animation/  css集合库并包含生成器
+5、CSSShake https://elrumordelaluz.github.io/cssshake/  魔性的css shake库 可用于广告、图像、按钮上等  # 打不开
+```
+
+
+

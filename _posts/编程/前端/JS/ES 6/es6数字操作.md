@@ -1,0 +1,61 @@
+
+
+**二进制声明 Binary**
+
+```javascript
+let binary = 0B111;
+console.log(binary); //在0B(大小写均可)之后接二进制数字即可 打印 7
+```
+
+**八进制声明 Octal**
+
+```javascript
+let b = 0O666;
+console.log(b); //在0O(大小写均可)之后接八进制数字即可 打印 438
+```
+
+**判断是否为数字 isFinite**
+
+```javascript
+let a = 11;
+console.log(Number.isFinite(a)); // true
+console.log(Number.isFinite('JSPang'));  // false
+console.log(Number.isFinite(NaN)); // false
+console.log(Number.isFinite(undefined)); // false
+```
+
+**判断是否为NaN isNaN**
+
+```javascript
+console.log(Number.isNaN(NaN)); // true
+console.log(Number.isNaN(1)); // false
+```
+
+**判断是否为整数 isInteger**
+
+```javascript
+let a = 918.1;
+console.log(Number.isInteger(a)); // false
+```
+
+**类型转换**
+
+```javascript
+let a = 918.1;
+console.log(Number.parseInt(a)); // 918
+console.log(Number.parseFloat(a)); // 918.1
+```
+
+**安全数**
+
+```javascript
+let jspang = Math.pow(2,53)-1;
+console.log(jspang);  // 9007199254740991
+console.log(Number.MAX_SAFE_INTEGER); //最大安全整数 9007199254740991
+console.log(Number.MIN_SAFE_INTEGER); //最小安全整数 -9007199254740991
+// 判断是否为安全数
+console.log(Number.isSafeInteger(jspang)) // true
+console.log(Number.isSafeInteger(jspang+1)) // false
+```
+
+如果不是安全数  则转换为字符串

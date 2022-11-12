@@ -1,0 +1,44 @@
+**字符串模板**
+
+ES5 是采用 + 来拼接字符串的  这样较为麻烦  ES6 可以使用变量的赋值
+
+```javascript
+let jspang = '技术胖';
+let blog = `我是${jspang}的小徒弟`;
+console.log(blog); // 打印 我是技术胖的小徒弟
+```
+
+这样的   1.可以加入html标签  2.可以支持基本运算
+
+```javascript
+let a = 1;
+let b = 2;
+console.log(`${a+b}`); // 打印 3
+```
+
+**字符串查找**
+
+ES5 写法 
+
+```javascript
+let jspang = '技术胖'
+let blog = '我是技术胖的小徒弟';
+console.log(blog.indexOf(jspang)>0);  // 打印 true
+```
+
+ES6 写法
+
+```javascript
+let jspang = '技术胖'
+let blog = '我是技术胖的小徒弟';
+console.log(blog.includes(jspang));  //代码改变 打印 true
+```
+
+这样的新方法还有  **startsWith() endsWith()**
+
+**字符串赋值**
+
+```javascript
+console.log('jspang|'.repeat(3)); // 打印 jspang|jspang|jspang|
+```
+
