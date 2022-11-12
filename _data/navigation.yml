@@ -24,11 +24,13 @@ docs-zh:
               - title: mysql数据库基本操作
               url: _post/2022-11-12-mysql数据库基本操作.md
   - title: 编程
-  children:
-    - title:  前端
-      url:    /docs/en/quick-start
-    - title:  后端
-      url:    /docs/en/structure
-
-# sidebar:
-#   nav: docs-zh
+    children:
+      - title:  后端
+        children: 
+          - title: java
+            children:
+              - title: javase基础知识
+                children: 
+                  - title: java初级知识点
+                  url: _posts/编程/后端/JAVA/javase基础知识/2022-11-12-java初级知识点.md
+            
