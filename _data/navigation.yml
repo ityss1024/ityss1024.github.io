@@ -7,6 +7,12 @@ header:
         url:    _post/2022-11-12-数据结构和算法.md
       - title:  操作系统
         url:    _post/2022-11-12-os.md
+      - title:  数据库
+        children:
+          - title:  mysql
+            children:
+              - title: mysql数据库基本操作
+              url: _post/2022-11-12-mysql数据库基本操作.md
   - title: 关于
     url: /about.html
   
