@@ -1,10 +1,15 @@
 header:
   - title: 归档      
     url: /archive.html
+  - title:  大学学科
+    children:
+      - title:  数据结构和算法
+        url:    _post/2022-11-12-数据结构和算法.md
+      - title:  操作系统
+        url:    _post/2022-11-12-os.md
   - title: 关于
     url: /about.html
-  sidebar:
-    nav: docs-en
+  
 
 
 docs-en:
